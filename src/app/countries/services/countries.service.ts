@@ -27,8 +27,8 @@ export class CountriesService {
     );
   }
 
-  searchRegion(term: string): Observable<Country[]> {
-    const url = `${this.apiUrl}/region/${term}`;
+  searchRegion(region: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/region/${region}`;
     return this.http.get<Country[]>(url).pipe(
       catchError((error) => {
         return of([]);
@@ -36,5 +36,3 @@ export class CountriesService {
     );
   }
 }
-
-// https://restcountries.com/v3.1/name/{name}
