@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-by-capital-page',
   standalone: false,
-  
+
   templateUrl: './by-capital-page.component.html',
-  styles: ``
+  styles: ``,
 })
 export class ByCapitalPageComponent {
-
+  searchByCapital(term: string): void {
+    console.log('Desde ByCapitalPage');
+    console.log({ term });
+  }
 }
