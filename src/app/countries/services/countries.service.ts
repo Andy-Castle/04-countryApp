@@ -57,13 +57,10 @@ export class CountriesService {
     );
   }
 
-  searchRegion(region: string): Observable<Country[]> {
+  searchRegion(region: Region): Observable<Country[]> {
     const url = `${this.apiUrl}/region/${region}`;
     return this.getCountriesRequest(url).pipe(
-      tap(
-        (countries) =>
-          (this.cacheStore.byRegion = <RegionCountries>{ region, countries })
-      )
+      tap((countries) => (this.cacheStore.byRegion = { region, countries }))
     );
   }
 }
